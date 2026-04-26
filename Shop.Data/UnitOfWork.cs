@@ -5,6 +5,11 @@ namespace Shop.Data;
 
 internal sealed class UnitOfWork : DbContext, IUnitOfWork
 {
+    public UnitOfWork(DbContextOptions<UnitOfWork> options)
+        : base(options)
+    {
+    }
+
     public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class =>
         new Repository<TEntity>(Set<TEntity>());
 
