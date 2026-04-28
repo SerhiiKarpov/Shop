@@ -37,3 +37,8 @@ Shop.Data.Contracts   → Repository and unit-of-work interfaces
 **Entity placement** — All domain entities live in `Shop.Contracts/Entities/`. They are plain C# classes; persistence concerns (configuration, migrations) stay in `Shop.Data`.
 
 **Database** — Currently uses EF Core In-Memory provider. To switch, change the provider registration in `Shop.Data/Extensions/ServiceCollectionExtensions.cs`.
+
+## Code Style
+
+- Always add curly braces to `if`, `foreach`, `for`, `while`, and similar statements, even when the body is a single statement.
+- Use comments sparingly — only when the code is non-obvious. Do not comment self-explanatory code.
