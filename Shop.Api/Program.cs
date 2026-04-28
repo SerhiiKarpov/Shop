@@ -1,7 +1,7 @@
 using Shop.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddData();
+builder.Services.AddServices();
 var app = builder.Build();
 
 app.MapEndpoints();
