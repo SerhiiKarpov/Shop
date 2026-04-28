@@ -34,6 +34,8 @@ Shop.Data.Contracts   → Repository and unit-of-work interfaces
 
 **DI registration** — `Shop.Data` exposes `IServiceCollection` extension methods (`ServiceCollectionExtensions`). Call these from `Program.cs`; don't register data-layer services directly in `Program.cs`.
 
+**Endpoint registration** — All endpoints are registered in @Shop.Api/Extensions/WebApplicationExtensions.cs file. `MapEndpoints` is the single entry point called from `Program.cs`; each entity gets its own private `Map*` method called from there.
+
 **Entity placement** — All domain entities live in `Shop.Contracts/Entities/`. They are plain C# classes; persistence concerns (configuration, migrations) stay in `Shop.Data`.
 
 **Database** — Currently uses EF Core In-Memory provider. To switch, change the provider registration in `Shop.Data/Extensions/ServiceCollectionExtensions.cs`.
